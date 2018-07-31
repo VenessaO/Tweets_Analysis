@@ -30,9 +30,9 @@ for tweet in tweetData:
 average = sum(polarity) / len(polarity)
 print("The average polarity is:", average)
 
-plt.hist(polarity)
-plt.ylabel("Frequency")
-plt.title(r"Twitter Analysis")
+# plt.scatter(polarity)
+# plt.ylabel("Frequency")
+# plt.title(r"Twitter Analysis")
 
 for tweet in tweetData:
     tb = TextBlob(tweet["text"])
@@ -48,7 +48,13 @@ for tweet in tweetData:
 average = sum(subjectivity) / len(subjectivity)
 print("The average subjectivity is:", average)
 
-plt.hist(subjectivity)
-plt.ylabel("Frequency")
-plt.title(r"Twitter Analysis")
+# plt.scatter(subjectivity)
+# plt.ylabel("Frequency")
+# plt.title(r"Twitter Analysis")
+
+plt.scatter(subjectivity, polarity, color=["red","blue"])
+plt.xlabel("Subjectivity")
+plt.ylabel("Polarity")
+plt.title("Twitter Analysis")
+# plt.legend()
 plt.show()
