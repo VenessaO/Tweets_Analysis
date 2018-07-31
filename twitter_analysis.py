@@ -9,12 +9,23 @@ from textblob import TextBlob
 import matplotlib.pyplot as plt
 
 #Get the JSON data
-tweetFile = open("TwitterData/tweets_small.json", "r")
+tweetFile = open("tweets.json", "r")
 tweetData = json.load(tweetFile)
 tweetFile.close()
 
-# Continue your program below!
+#Continue your program below!
+#json object or tweets are stored in tweetData
 
-# Textblob sample:
-tb = TextBlob("You are a brilliant computer scientist.")
-print(tb.polarity)
+#iterate list of tweest_small
+    # for each tweet access the text. Use the text feild tweet.text
+    # print polarity
+
+for tweet in tweetData:
+    tb = TextBlob(tweet["text"])
+    print(tb.polarity)
+    if tb.polarity > 0:
+        print("positive")
+    elif tb.polarity == 0:
+        print("neutral")
+    elif tb.polarity < 0:
+        print("negative")
