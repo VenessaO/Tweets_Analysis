@@ -15,6 +15,7 @@ for tweet in tweetData:
     break
 
 result = ""
+
 for word in tweets:
     result += str(word)
 
@@ -27,21 +28,10 @@ for word in data:
 
 print(words)
 
-# print(result)
+common_words = ["and", "or", "the", "is", "no", "a", "for", "yet", "so", "but", "be"]
 
-# tb = TextBlob(result)
-#
-# filtered_words = [""]
-#
-# common_words = ["about", "when", "http"]
-#
-# for word in result:
-#     if len(word) <= 3 or word in common_words:
-#         filtered_words.append(word)
-#         continue
-#     # elif len(word) > 3:
-#         # unfiltered_words.append(word)
-#         # print(word)
-#
-# print(len(filtered_words))
-# print(len(result))
+for item in words:
+    if item in common_words:
+        words.remove(item)
+
+print(words)
